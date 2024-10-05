@@ -13,14 +13,17 @@ import {
 
 const navListMenuItems = [
   {
+    id: 1,
     title: "Learn How To Use",
     description: "....------.....-----......-----.....----....",
   },
   {
+    id: 2,
     title: "Learn How to ...",
     description: "....------.....-----......-----.....----....",
   },
   {
+    id: 3,
     title: "Learn How to ...",
     description: "....------.....-----......-----.....----....",
   },
@@ -29,8 +32,8 @@ const navListMenuItems = [
 export default function ManualMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const renderItems = navListMenuItems.map(({ title, description }) => (
-    <a href="#" key={title}>
+  const renderItems = navListMenuItems.map(({ id, title, description }) => (
+    <a href="#" key={id}>
       <MenuItem>
         <p className="mb-1 text-gray-900">{title}</p>
         <p className="font-normal text-gray-900">{description}</p>
@@ -56,7 +59,7 @@ export default function ManualMenu() {
           </a>
         </MenuHandler>
         <MenuList className="mt-4 hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
-          <div className="bg-blue-violet-500 col-span-3 grid h-full w-full place-items-center rounded-md text-white">
+          <div className="col-span-3 grid h-full w-full place-items-center rounded-md bg-blue-violet-500 text-white">
             <WifiIcon strokeWidth={1} className="size-28" />
           </div>
           <ul className="col-span-4 flex w-full flex-col gap-1">
