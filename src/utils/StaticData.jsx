@@ -13,7 +13,7 @@ export const sensorsData = {
       sensorId: 1,
       sensorName: "Pir sensor",
       sensorIcon: (
-        <CubeTransparentIcon className="size-16 text-blue-500 md:size-28" />
+        <CubeTransparentIcon className="size-16 text-blue-500 md:size-28 xl:size-36 2xl:size-28" />
       ),
       sensorDesc:
         "PIR sensor detects unauthorized motion in certain areas like burglary",
@@ -22,7 +22,7 @@ export const sensorsData = {
       sensorId: 2,
       sensorName: "Flame sensor",
       sensorIcon: (
-        <FireIcon className="size-16 text-red-400 lg:size-20 xl:size-16" />
+        <FireIcon className="size-16 text-red-400 lg:size-20 xl:size-32 2xl:size-16" />
       ),
       sensorDesc: "Flame Sensor detects any fire or heat",
     },
@@ -53,13 +53,19 @@ export const sensorsData = {
     {
       sensorId: 1,
       sensorName: "Heart Rate",
-      sensorIcon: <img src={heartRate} className="size-14" />,
+      sensorIcon: (
+        <img src={heartRate} className="size-16 lg:size-20 xl:size-10" />
+      ),
+      // sensorIcon: <img src={heartRate} className="size-14" />,
       sensorDesc: "Detect Heart Rate Stuff ",
     },
     {
       sensorId: 2,
       sensorName: "Oxygen Level",
-      sensorIcon: <img src={oxygenLevel} className="size-14" />,
+      sensorIcon: (
+        <img src={oxygenLevel} className="size-16 lg:size-20 xl:size-10" />
+      ),
+      // sensorIcon: <img src={oxygenLevel} className="size-14" />,
       sensorDesc: "Detect The Oxgyen Level of Room",
     },
   ],

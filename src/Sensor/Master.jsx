@@ -8,7 +8,7 @@ function Master() {
       <h2 className="mb-4 rounded-xl bg-white py-6 text-center text-xl text-gray-900">
         Master
       </h2>
-      <div className="flex gap-8">
+      <div className="flex flex-col gap-5 xl:flex-row">
         <div>
           <h2 className="mb-4 rounded-xl bg-white py-3 text-center text-xl text-gray-900">
             Internal Sensors
@@ -23,7 +23,7 @@ function Master() {
           <h2 className="mb-4 rounded-xl bg-white py-3 text-center text-xl text-gray-900">
             Health Montring
           </h2>
-          <div className="flex flex-col gap-2">
+          <div className="xl:grid-col-1 grid grid-cols-2 gap-2">
             {sensorsData.healthMontring.map((sensor) => (
               <SensorSwitch data={sensor} key={sensor.sensorId} />
             ))}
