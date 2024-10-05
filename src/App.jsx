@@ -10,7 +10,7 @@ import SignIn from "./Account/SignIn";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/SDS",
     element: <Layout />,
     children: [
       {
