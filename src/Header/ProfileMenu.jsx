@@ -15,31 +15,42 @@ import {
   InboxArrowDownIcon,
   PowerIcon,
 } from "@heroicons/react/24/solid";
-
-const profileMenuItems = [
-  {
-    label: "My Profile",
-    icon: UserCircleIcon,
-  },
-  {
-    label: "Edit Profile",
-    icon: Cog6ToothIcon,
-  },
-  {
-    label: "Inbox",
-    icon: InboxArrowDownIcon,
-  },
-
-  {
-    label: "Sign Out",
-    icon: PowerIcon,
-  },
-];
+import { useUser } from "../Context/userProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const closeMenu = () => setIsMenuOpen(false);
+  const { setLogged } = useUser();
+  const navigate = useNavigate();
+
+  const profileMenuItems = [
+    {
+      label: "My Profile",
+      icon: UserCircleIcon,
+      buttonFunc: closeMenu,
+    },
+    {
+      label: "Edit Profile",
+      icon: Cog6ToothIcon,
+      buttonFunc: closeMenu,
+    },
+    {
+      label: "Inbox",
+      icon: InboxArrowDownIcon,
+      buttonFunc: closeMenu,
+    },
+
+    {
+      label: "Sign Out",
+      icon: PowerIcon,
+      buttonFunc: () => {
+        setLogged(false);
+        closeMenu();
+        navigate("/SDS/account/signin");
+      },
+    },
+  ];
 
   return (
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
@@ -65,12 +76,13 @@ export default function ProfileMenu() {
         </Button>
       </MenuHandler>
       <MenuList className="p-1">
-        {profileMenuItems.map(({ label, icon }, key) => {
+        {profileMenuItems.map(({ label, icon, buttonFunc }, key) => {
           const isLastItem = key === profileMenuItems.length - 1;
           return (
             <MenuItem
               key={label}
-              onClick={closeMenu}
+              onClick={buttonFunc}
+              // onClick={closeMenu}
               className={`flex items-center gap-2 rounded ${
                 isLastItem
                   ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"

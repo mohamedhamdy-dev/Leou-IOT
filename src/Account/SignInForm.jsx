@@ -1,27 +1,67 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useUser } from "../Context/userProvider";
+import { useState } from "react";
 
 export default function SignInForm() {
+  const { setLogged } = useUser();
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
+
+  function handleForm(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (formData.email === "test@sds.com" && formData.password === "123456") {
+      setLogged(true);
+      navigate("/SDS/Sensor");
+    } else if (
+      formData.email === "test2@sds.com" &&
+      formData.password === "123456"
+    ) {
+      setLogged(true);
+      navigate("/SDS/Sensor");
+    } else if (
+      formData.email === "test3@sds.com" &&
+      formData.password === "123456"
+    ) {
+      setLogged(true);
+      navigate("/SDS/Sensor");
+    } else {
+      setLogged(false);
+    }
+  }
+
   return (
-    <form className="min-w-96 max-w-96 rounded-xl bg-white px-6 py-8">
+    <form
+      className="min-w-96 max-w-96 rounded-xl bg-white px-6 py-8"
+      onSubmit={handleSubmit}
+    >
       <label className="mt-5 block">
         Email
         <input
+          onChange={handleForm}
+          value={formData.email}
           type="text"
           name="email"
-          className="bg-blue-violet-50 focus:ring-blue-violet-500 mt-1 block w-full rounded-md border-none px-3 py-[6px] outline-none focus:ring-1"
+          className="mt-1 block w-full rounded-md border-none bg-blue-violet-50 px-3 py-[6px] outline-none focus:ring-1 focus:ring-blue-violet-500"
         />
       </label>
       <label className="mt-5 block">
         Password
         <input
+          onChange={handleForm}
+          value={formData.password}
           type="password"
           name="password"
-          className="bg-blue-violet-50 focus:ring-blue-violet-500 mt-1 block w-full rounded-md border-none px-3 py-[6px] outline-none focus:ring-1"
+          className="mt-1 block w-full rounded-md border-none bg-blue-violet-50 px-3 py-[6px] outline-none focus:ring-1 focus:ring-blue-violet-500"
         />
       </label>
       <button
         type="submit"
-        className="bg-blue-violet-500 hover:text-blue-violet-500 border-blue-violet-500 mb-10 mt-6 w-full rounded-2xl border-[1px] p-3 text-center uppercase text-white outline-none duration-300 hover:bg-white"
+        className="mb-10 mt-6 w-full rounded-2xl border-[1px] border-blue-violet-500 bg-blue-violet-500 p-3 text-center uppercase text-white outline-none duration-300 hover:bg-white hover:text-blue-violet-500"
       >
         Sign In
       </button>
@@ -34,15 +74,15 @@ export default function SignInForm() {
       </div>
 
       <NavLink
-        to="/account/register"
-        className="hover:text-blue-violet-600 mt-5 block text-center text-gray-900 antialiased duration-300 hover:animate-pulse"
+        to="/SDS/account/register"
+        className="mt-5 block text-center text-gray-900 antialiased duration-300 hover:animate-pulse hover:text-blue-violet-600"
       >
         Sign Up
       </NavLink>
 
       <Link
         to="##"
-        className="hover:text-blue-violet-600 mt-6 block text-gray-900 antialiased duration-300 hover:animate-pulse"
+        className="mt-6 block text-gray-900 antialiased duration-300 hover:animate-pulse hover:text-blue-violet-600"
       >
         Forgot Password ?
       </Link>

@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/solid";
 import ManualMenu from "./ManualMenu";
 import { NavLink } from "react-router-dom";
+import propTypes from "prop-types";
 
 const navListItems = [
   {
@@ -32,11 +33,11 @@ const navListItems = [
   },
 ];
 
-export default function NavList() {
+export default function NavList({ setIsNavOpen }) {
   return (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
       {navListItems.map(({ label, to, icon }) => (
-        <li key={label}>
+        <li key={label} onClick={() => setIsNavOpen(false)}>
           <NavLink to={to} className="text-gray-900">
             <MenuItem className="flex items-center gap-2 lg:rounded-full">
               {React.createElement(icon, { className: "h-[18px] w-[18px]" })}{" "}
@@ -49,3 +50,5 @@ export default function NavList() {
     </ul>
   );
 }
+
+NavList.propTypes = { setIsNavOpen: propTypes.func };

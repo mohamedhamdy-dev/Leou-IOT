@@ -1,4 +1,3 @@
-import { Button } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 export default function RegisterForm() {
@@ -11,7 +10,7 @@ export default function RegisterForm() {
             placeholder="it's Me"
             type="text"
             name="firstName"
-            className="bg-blue-violet-50 focus:ring-blue-violet-500 mt-1 block w-full rounded-md border-none px-3 py-[6px] outline-none focus:ring-1"
+            className="mt-1 block w-full rounded-md border-none bg-blue-violet-50 px-3 py-[6px] outline-none focus:ring-1 focus:ring-blue-violet-500"
           />
         </label>
         <label className="basis-1/2">
@@ -20,7 +19,7 @@ export default function RegisterForm() {
             placeholder="LeoU"
             type="text"
             name="lastName"
-            className="bg-blue-violet-50 focus:ring-blue-violet-500 mt-1 block w-full rounded-md border-none px-3 py-[6px] outline-none focus:ring-1"
+            className="mt-1 block w-full rounded-md border-none bg-blue-violet-50 px-3 py-[6px] outline-none focus:ring-1 focus:ring-blue-violet-500"
           />
         </label>
       </div>
@@ -30,7 +29,7 @@ export default function RegisterForm() {
           placeholder="LeoU_98@gmail.com"
           type="text"
           name="email"
-          className="bg-blue-violet-50 focus:ring-blue-violet-500 mt-1 block w-full rounded-md border-none px-3 py-[6px] outline-none focus:ring-1"
+          className="mt-1 block w-full rounded-md border-none bg-blue-violet-50 px-3 py-[6px] outline-none focus:ring-1 focus:ring-blue-violet-500"
         />
       </label>
       <label className="mt-5 block">
@@ -38,21 +37,21 @@ export default function RegisterForm() {
         <input
           type="password"
           name="password"
-          className="bg-blue-violet-50 focus:ring-blue-violet-500 mt-1 block w-full rounded-md border-none px-3 py-[6px] outline-none focus:ring-1"
+          className="mt-1 block w-full rounded-md border-none bg-blue-violet-50 px-3 py-[6px] outline-none focus:ring-1 focus:ring-blue-violet-500"
         />
       </label>
 
       <button
         type="submit"
-        className="bg-blue-violet-500 hover:text-blue-violet-500 border-blue-violet-500 mt-6 w-full rounded-2xl border-[1px] p-3 text-center uppercase text-white outline-none duration-300 hover:bg-white"
+        className="mt-6 w-full rounded-2xl border-[1px] border-blue-violet-500 bg-blue-violet-500 p-3 text-center uppercase text-white outline-none duration-300 hover:bg-white hover:text-blue-violet-500"
       >
         Sign Up
       </button>
       <p className="my-5 text-center">
         Already have an account?{" "}
         <Link
-          to="/account/signin"
-          className="hover:text-blue-violet-600 text-gray-900 antialiased duration-300 hover:animate-pulse"
+          to="/SDS/account/signin"
+          className="text-gray-900 antialiased duration-300 hover:animate-pulse hover:text-blue-violet-600"
         >
           Sign In
         </Link>
@@ -78,14 +77,14 @@ export default function RegisterForm() {
         Upon signing up, you consent to abide by our{" "}
         <Link
           to="##"
-          className="hover:text-blue-violet-600 text-gray-900 duration-300"
+          className="text-gray-900 duration-300 hover:text-blue-violet-600"
         >
           Terms of Service
         </Link>{" "}
         &{" "}
         <Link
           to="##"
-          className="hover:text-blue-violet-600 text-gray-900 duration-300"
+          className="text-gray-900 duration-300 hover:text-blue-violet-600"
         >
           Privacy Policy.
         </Link>

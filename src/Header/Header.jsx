@@ -2,17 +2,20 @@ import React, { useState } from "react";
 import {
   Navbar,
   MobileNav,
-  Button,
   IconButton,
+  Collapse,
 } from "@material-tailwind/react";
 import { Bars2Icon } from "@heroicons/react/24/solid";
 import NavList from "./NavList";
 import ProfileMenu from "./ProfileMenu";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useUser } from "../Context/userProvider";
+import logo from "../assets/account/SDS.png";
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [logged, setLogged] = useState(false);
+
+  const { logged } = useUser();
 
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
   React.useEffect(() => {
@@ -25,7 +28,8 @@ export default function Header() {
   return (
     <Navbar className="mt-4 bg-white/95 px-4 py-3 lg:rounded-xl">
       <div className="relative mx-auto flex items-center justify-between text-gray-900">
-        <span className="ml-2 mr-4 cursor-pointer py-1.5 font-medium">SDS</span>
+        {/* <span className="ml-2 mr-4 cursor-pointer py-1.5 font-medium">SDS</span> */}
+        <img src={logo} alt="SDS Logo" className="ml-2 mr-4 size-12" />
         <div className="hidden lg:block">
           <NavList />
         </div>
@@ -45,9 +49,9 @@ export default function Header() {
           <NavLink to={"account/signin"}>Log In</NavLink>
         )}
       </div>
-      <MobileNav open={isNavOpen} className="overflow-scroll">
-        <NavList />
-      </MobileNav>
+      <Collapse open={isNavOpen} className="overflow-scroll">
+        <NavList setIsNavOpen={setIsNavOpen} />
+      </Collapse>
     </Navbar>
   );
 }
