@@ -14,17 +14,17 @@ import {
 const navListMenuItems = [
   {
     id: 1,
-    title: "Learn How To Use",
+    title: "SDS Build V1",
     description: "....------.....-----......-----.....----....",
   },
   {
     id: 2,
-    title: "Learn How to ...",
+    title: "SDS Build V2",
     description: "....------.....-----......-----.....----....",
   },
   {
     id: 3,
-    title: "Learn How to ...",
+    title: "SDS Build V3",
     description: "....------.....-----......-----.....----....",
   },
 ];
