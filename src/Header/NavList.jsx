@@ -37,7 +37,8 @@ export default function NavList({ setIsNavOpen }) {
   return (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
       {navListItems.map(({ label, to, icon }) => (
-        <li key={label} onClick={() => setIsNavOpen(false)}>
+        // <li key={label} onClick={() => setIsNavOpen(false)}>
+        <li key={label}>
           <NavLink to={to} className="text-gray-900">
             <MenuItem className="flex items-center gap-2 lg:rounded-full">
               {React.createElement(icon, { className: "h-[18px] w-[18px]" })}{" "}

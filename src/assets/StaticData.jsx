@@ -4,9 +4,6 @@ import {
   VideoCameraIcon,
 } from "@heroicons/react/24/outline";
 
-import heartRate from "../assets/sensors/heartRate.png";
-import oxygenLevel from "../assets/sensors/oxygenLevel.png";
-
 export const sensorsData = {
   internalEnvironment: [
     {
@@ -54,30 +51,36 @@ export const sensorsData = {
       sensorId: 1,
       sensorName: "Heart Rate",
       sensorIcon: (
-        <img src={heartRate} className="size-16 lg:size-20 xl:size-10" />
+        <img
+          src="/sensors/heartRate.png"
+          alt="Heart Rate Icon"
+          className="size-16 lg:size-20 xl:size-10"
+        />
       ),
-      // sensorIcon: <img src={heartRate} className="size-14" />,
       sensorDesc: "Detect Heart Rate Stuff ",
     },
     {
       sensorId: 2,
       sensorName: "Oxygen Level",
       sensorIcon: (
-        <img src={oxygenLevel} className="size-16 lg:size-20 xl:size-10" />
+        <img
+          src="/sensors/oxygenLevel.png"
+          alt="Oxygen Level Icon"
+          className="size-16 lg:size-20 xl:size-10"
+        />
       ),
-      // sensorIcon: <img src={oxygenLevel} className="size-14" />,
       sensorDesc: "Detect The Oxgyen Level of Room",
     },
   ],
-  naturalDisaster: [
-    {
-      sensorId: 1,
-      sensorName: "Heart Rate",
-      sensorIcon: <img src={heartRate} className="size-14" />,
-      sensorDesc:
-        "PIR sensor detects unauthorized motion in certain areas like burglary",
-    },
-  ],
+  // naturalDisaster: [
+  //   {
+  //     sensorId: 1,
+  //     sensorName: "Heart Rate",
+  //     sensorIcon: <img src={heartRate} className="size-14" />,
+  //     sensorDesc:
+  //       "PIR sensor detects unauthorized motion in certain areas like burglary",
+  //   },
+  // ],
 };
 
 // export const internalEnvironmentSensors = [

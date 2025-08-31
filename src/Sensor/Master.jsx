@@ -1,4 +1,4 @@
-import { sensorsData } from "../utils/StaticData";
+import { sensorsData } from "../assets/StaticData";
 import DisasterSensorSwitch from "./DisasterSensorSwitch";
 import SensorSwitch from "./SensorSwitch";
 

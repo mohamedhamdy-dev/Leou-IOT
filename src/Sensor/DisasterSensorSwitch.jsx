@@ -1,4 +1,4 @@
-import naturalDisaster from "../assets/sensors/naturalDisaster.jpg";
+import naturalDisaster from "/sensors/naturalDisaster.jpg";
 import SwitchCustomStyles from "./SwitchCustomStyles";
 
 function DisasterSensorSwitch() {

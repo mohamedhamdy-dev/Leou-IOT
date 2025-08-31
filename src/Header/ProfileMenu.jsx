@@ -15,13 +15,13 @@ import {
   InboxArrowDownIcon,
   PowerIcon,
 } from "@heroicons/react/24/solid";
-import { useUser } from "../Context/userProvider";
+import { useAuth } from "../Context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 export default function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
-  const { setLogged } = useUser();
+  const { setIsAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   const profileMenuItems = [
@@ -45,9 +45,9 @@ export default function ProfileMenu() {
       label: "Sign Out",
       icon: PowerIcon,
       buttonFunc: () => {
-        setLogged(false);
+        setIsAuthenticated(false);
         closeMenu();
-        navigate("/SDS/account/signin");
+        navigate("/account/signin");
       },
     },
   ];
@@ -58,7 +58,7 @@ export default function ProfileMenu() {
         <Button
           variant="text"
           color="blue-gray"
-          className="flex items-center gap-1 rounded-full py-0.5 pl-0.5 pr-2 lg:ml-auto"
+          className="flex items-center gap-1 rounded-full py-0.5 pl-0.5 pr-2"
         >
           <Avatar
             variant="circular"

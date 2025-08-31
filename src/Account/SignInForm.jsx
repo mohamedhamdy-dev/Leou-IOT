@@ -1,10 +1,13 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { useUser } from "../Context/userProvider";
+import { useAuth } from "../Context/AuthProvider";
 import { useState } from "react";
 
 export default function SignInForm() {
-  const { setLogged } = useUser();
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const { setIsAuthenticated } = useAuth();
+  const [formData, setFormData] = useState({
+    email: "mohamed_hamdy@dev.com",
+    password: "leou",
+  });
   const navigate = useNavigate();
 
   function handleForm(e) {
@@ -14,23 +17,12 @@ export default function SignInForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (formData.email === "test@sds.com" && formData.password === "123456") {
-      setLogged(true);
-      navigate("/SDS/Sensor");
-    } else if (
-      formData.email === "test2@sds.com" &&
-      formData.password === "123456"
+    if (
+      formData.email === "mohamed_hamdy@dev.com" &&
+      formData.password === "leou"
     ) {
-      setLogged(true);
-      navigate("/SDS/Sensor");
-    } else if (
-      formData.email === "test3@sds.com" &&
-      formData.password === "123456"
-    ) {
-      setLogged(true);
-      navigate("/SDS/Sensor");
-    } else {
-      setLogged(false);
+      setIsAuthenticated(true);
+      navigate("/sensor");
     }
   }
 
