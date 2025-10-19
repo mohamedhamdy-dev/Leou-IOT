@@ -15,17 +15,20 @@ const navListMenuItems = [
   {
     id: 1,
     title: "Build V1",
-    description: "....------.....-----......-----.....----....",
+    description:
+      "The first prototype with core sensor monitoring and alerting features.",
   },
   {
     id: 2,
     title: "Build V2",
-    description: "....------.....-----......-----.....----....",
+    description:
+      "Refined interface, added medical sensor integration and real-time updates.",
   },
   {
     id: 3,
     title: "Build V3",
-    description: "....------.....-----......-----.....----....",
+    description:
+      "Current build with control center, automation, and cloud sync features.",
   },
 ];
 

@@ -7,7 +7,7 @@ export default function RegisterForm() {
         <label className="basis-1/2">
           First Name
           <input
-            placeholder="it's Me"
+            placeholder="Mohamed"
             type="text"
             name="firstName"
             className="mt-1 block w-full rounded-md border-none bg-blue-violet-50 px-3 py-[6px] outline-none focus:ring-1 focus:ring-blue-violet-500"
@@ -16,7 +16,7 @@ export default function RegisterForm() {
         <label className="basis-1/2">
           Last Name
           <input
-            placeholder="LeoU"
+            placeholder="Hamdy"
             type="text"
             name="lastName"
             className="mt-1 block w-full rounded-md border-none bg-blue-violet-50 px-3 py-[6px] outline-none focus:ring-1 focus:ring-blue-violet-500"
@@ -26,7 +26,7 @@ export default function RegisterForm() {
       <label className="mt-5 block">
         Email
         <input
-          placeholder="LeoU_98@gmail.com"
+          placeholder="mohamed_hamdy@dev.com"
           type="text"
           name="email"
           className="mt-1 block w-full rounded-md border-none bg-blue-violet-50 px-3 py-[6px] outline-none focus:ring-1 focus:ring-blue-violet-500"
@@ -41,16 +41,13 @@ export default function RegisterForm() {
         />
       </label>
 
-      <button
-        type="submit"
-        className="mt-6 w-full rounded-2xl border-[1px] border-blue-violet-500 bg-blue-violet-500 p-3 text-center uppercase text-white outline-none duration-300 hover:bg-white hover:text-blue-violet-500"
-      >
+      <button className="mt-6 w-full rounded-2xl border-[1px] border-blue-violet-500 bg-blue-violet-500 p-3 text-center uppercase text-white outline-none duration-300 hover:bg-white hover:text-blue-violet-500">
         Sign Up
       </button>
       <p className="my-5 text-center">
         Already have an account?{" "}
         <Link
-          to="/SDS/account/signin"
+          to="/account/signin"
           className="text-gray-900 antialiased duration-300 hover:animate-pulse hover:text-blue-violet-600"
         >
           Sign In

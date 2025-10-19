@@ -6,7 +6,7 @@ export default function SwitchCustomStyles({ label }) {
       // label={label}
       // id="custom-switch-component"
       ripple={false}
-      className="h-full w-full checked:bg-blue-violet-500"
+      className="h-full w-full checked:bg-blue-violet-800"
       containerProps={{
         className: "w-8 h-4",
       }}

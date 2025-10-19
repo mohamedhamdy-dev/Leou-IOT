@@ -1,12 +1,44 @@
-import Master from "./Master";
 import Weather from "./Weather";
+import { sensorsData } from "../assets/StaticData";
+import DisasterSensorSwitch from "./DisasterSensorSwitch";
+import SensorSwitch from "./SensorSwitch";
 
 function Sensor() {
   return (
-    <main className="">
+    <main>
       <Weather />
-      <div className="mt-8">
-        <Master />
+      <div className="mt-8 min-h-80 rounded-xl bg-white/30 p-3">
+        <h2 className="mb-4 rounded-xl bg-white py-6 text-center text-xl text-gray-900">
+          Master
+        </h2>
+        <div className="flex flex-col gap-5 2xl:flex-row">
+          <div>
+            <h2 className="mb-4 rounded-xl bg-white py-3 text-center text-xl text-gray-900">
+              Internal Sensors
+            </h2>
+            <div className="grid grid-cols-2 grid-rows-2 gap-2">
+              {sensorsData.internalEnvironment.map((sensor) => (
+                <SensorSwitch data={sensor} key={sensor.sensorId} />
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="mb-4 rounded-xl bg-white py-3 text-center text-xl text-gray-900">
+              Health Montring
+            </h2>
+            <div className="xl:grid-col-1 grid grid-cols-2 gap-2">
+              {sensorsData.healthMontring.map((sensor) => (
+                <SensorSwitch data={sensor} key={sensor.sensorId} />
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="mb-4 rounded-xl bg-white py-3 text-center text-xl text-gray-900">
+              Natural Disaster
+            </h2>
+            <DisasterSensorSwitch />
+          </div>
+        </div>
       </div>
     </main>
   );

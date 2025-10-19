@@ -27,10 +27,7 @@ export default function SignInForm() {
   }
 
   return (
-    <form
-      className="min-w-96 max-w-96 rounded-xl bg-white px-6 py-8"
-      onSubmit={handleSubmit}
-    >
+    <form className="min-w-96 max-w-96 rounded-xl bg-white px-6 py-8">
       <label className="mt-5 block">
         Email
         <input
@@ -52,7 +49,7 @@ export default function SignInForm() {
         />
       </label>
       <button
-        type="submit"
+        onClick={handleSubmit}
         className="mb-10 mt-6 w-full rounded-2xl border-[1px] border-blue-violet-500 bg-blue-violet-500 p-3 text-center uppercase text-white outline-none duration-300 hover:bg-white hover:text-blue-violet-500"
       >
         Sign In
@@ -66,7 +63,7 @@ export default function SignInForm() {
       </div>
 
       <NavLink
-        to="/SDS/account/register"
+        to="/account/register"
         className="mt-5 block text-center text-gray-900 antialiased duration-300 hover:animate-pulse hover:text-blue-violet-600"
       >
         Sign Up

@@ -9,6 +9,8 @@ import Register from "./Account/Register";
 import SignIn from "./Account/SignIn";
 import AuthProvider from "./Context/AuthProvider";
 import ProtectedRoute from "./UI/ProtectedRoute";
+import Profile from "./Profile/Profile";
+import Inbox from "./Profile/Inbox";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +36,7 @@ const router = createBrowserRouter([
         element: <ProtectedRoute />,
         children: [
           {
-            path: "/",
+            index: true,
             element: <Home />,
           },
           {
@@ -52,6 +54,14 @@ const router = createBrowserRouter([
           {
             path: "announcement",
             element: <Announcement />,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+          {
+            path: "inbox",
+            element: <Inbox />,
           },
         ],
       },
