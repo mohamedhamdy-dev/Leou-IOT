@@ -38,7 +38,7 @@ export default function Header() {
           color="blue-gray"
           variant="text"
           onClick={toggleIsNavOpen}
-          className="ml-auto mr-2 lg:hidden"
+          className="ml-auto lg:hidden"
         >
           <Bars2Icon className="size-6" />
         </IconButton>
@@ -46,7 +46,7 @@ export default function Header() {
         {isAuthenticated ? (
           <ProfileMenu />
         ) : (
-          <NavLink to={"/account/signin"}>Log In</NavLink>
+          <span className="text-white">.</span>
         )}
       </div>
       <Collapse open={isNavOpen} className="overflow-scroll">

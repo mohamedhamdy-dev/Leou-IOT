@@ -39,7 +39,8 @@ export default function ManualMenu() {
     <a href="#" key={id}>
       <MenuItem>
         <p className="mb-1 text-gray-900">{title}</p>
-        <p className="font-normal text-gray-900">{description}</p>
+        {/* <p className="max-w-80 font-normal text-gray-900">{description}</p> */}
+        <p className="pl-2 font-normal text-gray-900">{description}</p>
       </MenuItem>
     </a>
   ));
@@ -54,7 +55,7 @@ export default function ManualMenu() {
               Manual
               <ChevronDownIcon
                 strokeWidth={2}
-                className={`h-3 w-3 transition-transform ${
+                className={`size-3 transition-transform ${
                   isMenuOpen ? "rotate-180" : ""
                 }`}
               />
@@ -74,9 +75,8 @@ export default function ManualMenu() {
         <Square3Stack3DIcon className="h-[18px] w-[18px] text-blue-gray-500" />{" "}
         Manual
       </MenuItem>
-      <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
-        {renderItems}
-      </ul>
+      {/* <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden"> */}
+      <ul className="flex w-full flex-col gap-1 lg:hidden">{renderItems}</ul>
     </>
   );
 }
